@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fish & Chips Restaurant</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Fish & Chips Restaurant</h1>
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#contact">Contact</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#register">Register</a>
+        </nav>
+    </header>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-item" data-id="1">
+            <img src="images\images.jpg" alt="Fish & Chips Classic">
+            <h3>Classic Fish & Chips</h3>
+            <p>Crispy battered fish served with golden fries.</p>
+            <p>Price: $12</p>
+            <button onclick="addToCart(1, 'Classic Fish & Chips', 12)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-id="2">
+            <img src="images\fish chips and mushy peas.jpg" alt="Fish & Chips with Mushy Peas">
+            <h3>Fish & Chips with Mushy Peas</h3>
+            <p>Fresh fish and crispy chips served with mushy peas.</p>
+            <p>Price: $14</p>
+            <button onclick="addToCart(2, 'Fish & Chips with Mushy Peas', 14)">Add to Cart</button>
+        </div>
+        <div class="menu-item" data-id="3">
+            <img src="images\coleslaw.jpg" alt="Fish & Chips with Coleslaw">
+            <h3>Fish & Chips with Coleslaw</h3>
+            <p>Classic fish and chips served with a side of creamy coleslaw.</p>
+            <p>Price: $16</p>
+            <button onclick="addToCart(3, 'Fish & Chips with Coleslaw', 16)">Add to Cart</button>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <p>Address: 123 Fish St, Seaside Town</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Hours: Mon-Sun: 11 AM - 9 PM</p>
+    </section>
+
+    <section id="reviews">
+        <h2>Product Reviews</h2>
+        <div id="reviews-list">
+            <!-- Reviews will be dynamically loaded here -->
+        </div>
+    </section>
+
+    <section id="register">
+        <h2>Register</h2>
+        <form id="registerForm" onsubmit="registerUser(event)">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <button type="submit">Register</button>
+        </form>
+    </section>
+
+    <div id="order-popup" class="popup">
+        <div class="popup-content">
+            <h3>Your Order has been placed!</h3>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <div id="registration-popup" class="popup">
+        <div class="popup-content">
+            <h3>Registration Successful!</h3>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <div id="cart" class="cart">
+        <h3>Your Cart</h3>
+        <div id="cart-items"></div>
+        <button id="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Fish & Chips Restaurant</p>
+    </footer>
+</body>
+</html>
